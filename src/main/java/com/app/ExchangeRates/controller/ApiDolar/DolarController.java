@@ -1,7 +1,7 @@
-package com.app.ExchangeRates.controller;
+package com.app.ExchangeRates.controller.ApiDolar;
 
-import com.app.ExchangeRates.model.Money;
-import com.app.ExchangeRates.service.DolarService;
+import com.app.ExchangeRates.model.DolarApi.Money;
+import com.app.ExchangeRates.service.DolarApi.DolarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

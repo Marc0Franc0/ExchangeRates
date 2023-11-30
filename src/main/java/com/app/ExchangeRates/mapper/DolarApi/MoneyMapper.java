@@ -1,6 +1,6 @@
-package com.app.ExchangeRates.mapper;
+package com.app.ExchangeRates.mapper.DolarApi;
 
-import com.app.ExchangeRates.model.Money;
+import com.app.ExchangeRates.model.DolarApi.Money;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

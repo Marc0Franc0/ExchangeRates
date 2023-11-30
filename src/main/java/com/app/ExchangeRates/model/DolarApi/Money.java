@@ -1,10 +1,12 @@
-package com.app.ExchangeRates.model;
+package com.app.ExchangeRates.model.DolarApi;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Builder
 @Data
@@ -19,7 +21,6 @@ public class Money {
     Double buyValue;
     @JsonProperty("venta")
     Double saleValue;
-
   /*  "moneda": "USD",
             "casa": "blue",
             "nombre": "Blue",

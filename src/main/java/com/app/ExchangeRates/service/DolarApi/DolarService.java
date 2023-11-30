@@ -1,6 +1,6 @@
-package com.app.ExchangeRates.service;
+package com.app.ExchangeRates.service.DolarApi;
 
-import com.app.ExchangeRates.model.Money;
+import com.app.ExchangeRates.model.DolarApi.Money;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package com.app.ExchangeRates.context;
+package com.app.ExchangeRates.config.context;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.web.client.RestTemplateBuilder;

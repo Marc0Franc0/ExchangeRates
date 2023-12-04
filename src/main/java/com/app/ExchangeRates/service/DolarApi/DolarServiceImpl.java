@@ -1,15 +1,12 @@
 package com.app.ExchangeRates.service.DolarApi;
 
-import com.app.ExchangeRates.mapper.DolarApi.MoneyMapper;
 import com.app.ExchangeRates.model.DolarApi.Money;
-import com.app.ExchangeRates.service.DolarApi.DolarService;
 import com.app.ExchangeRates.service.util.ApiUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
@@ -25,7 +22,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -34,7 +31,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -43,7 +40,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -52,7 +49,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -61,7 +58,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -70,7 +67,7 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -79,6 +76,6 @@ public class DolarServiceImpl implements DolarService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 }

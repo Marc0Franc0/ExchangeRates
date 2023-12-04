@@ -1,8 +1,10 @@
 package com.app.ExchangeRates.controller.ApiDolar;
 
 import com.app.ExchangeRates.model.DolarApi.Money;
+import com.app.ExchangeRates.model.FinnHub.Quote;
 import com.app.ExchangeRates.service.DolarApi.DolarService;
 import com.app.ExchangeRates.service.DolarApi.OtherCurrenciesService;
+import com.app.ExchangeRates.service.FinnHubApi.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class OtherCurrenciesController {
     @Autowired
     private OtherCurrenciesService otherCurrenciesService;
+    @Autowired
+    private QuoteService quoteService;
     @GetMapping("/euro")
     ResponseEntity<Money> getEuro(){
     return ResponseEntity.status(HttpStatus.OK).body(otherCurrenciesService.getEuro());

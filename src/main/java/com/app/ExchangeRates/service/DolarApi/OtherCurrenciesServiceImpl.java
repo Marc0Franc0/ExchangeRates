@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,7 +22,7 @@ public class OtherCurrenciesServiceImpl implements OtherCurrenciesService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -32,7 +31,7 @@ public class OtherCurrenciesServiceImpl implements OtherCurrenciesService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                         apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -41,7 +40,7 @@ public class OtherCurrenciesServiceImpl implements OtherCurrenciesService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
     @Override
@@ -50,7 +49,7 @@ public class OtherCurrenciesServiceImpl implements OtherCurrenciesService {
         HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                         apiUtil.consultExternalApi(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
     }
 
 

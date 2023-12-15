@@ -1,21 +1,20 @@
 package com.app.ExchangeRates.model.FinnHub;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import lombok.*;
 
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class Quote {
     @JsonProperty("c")
-    private Double currentPrice;
+    private Double currencyPrice;
     @JsonProperty("dp")
     private Double percentChange;
     @JsonProperty("o")
     private Double openPriceOfTheDay;
 
-/*  {
+    /*  {
         "c": 191.24,
             "d": 1.29,
             "dp": 0.6791,

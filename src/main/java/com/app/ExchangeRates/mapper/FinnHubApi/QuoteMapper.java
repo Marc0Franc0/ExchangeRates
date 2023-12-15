@@ -9,7 +9,7 @@ public class QuoteMapper {
         return  Quote.builder()
                 .openPriceOfTheDay(quote.getOpenPriceOfTheDay())
                 .percentChange(quote.getPercentChange())
-                .currentPrice(quote.getCurrentPrice())
+                .currencyPrice(quote.getCurrencyPrice())
                 .build();
     }
 }

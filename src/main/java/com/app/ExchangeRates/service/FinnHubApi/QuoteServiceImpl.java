@@ -13,9 +13,15 @@ public class QuoteServiceImpl implements QuoteService {
     String baseUrl;
     @Value("${finnhub.token}")
     String token;
+
     @Override
     public Quote getQuote(String symbol) {
-        String uri = baseUrl+"/quote?symbol="+symbol+"&token="+token;
-        return apiUtil.buildQuoteDTO(apiUtil.getForEntity(uri,Quote.class));
+        this.apiUtil.validateUri(baseUrl,token);
+        if(!apiUtil.validateString(symbol)&&symbol!=null&&symbol!=""){{
+                String uri = baseUrl+"/quote?symbol="+symbol+"&token="+token;
+                return apiUtil.buildQuoteDTO(apiUtil.getForEntity(uri,Quote.class));
+
+        }}
+       throw new IllegalArgumentException("Null symbol or invalid");
     }
 }

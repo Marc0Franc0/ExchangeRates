@@ -64,12 +64,13 @@ public class DolarController {
     ResponseEntity<Money> getStockMarketDollar(){
         return ResponseEntity.status(HttpStatus.OK).body(dolarService.getStockMarketDollar());
     }
-    @Operation(summary = "Get Solidarity Dollar", responses = {
+   /* @Operation(summary = "Get Solidarity Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
-    @GetMapping("/solidarity")
+    @GetMapping("/solidarity")*/
+    //No se encuentra disponible en api externa
     ResponseEntity<Money> getSolidarityDollar(){
         return ResponseEntity.status(HttpStatus.OK).body(dolarService.getSolidarityDollar());
     }
@@ -83,5 +84,14 @@ public class DolarController {
     ResponseEntity<Money> getWholesaleDollar(){
         return ResponseEntity.status(HttpStatus.OK).body(dolarService.getWholesaleDollar());
     }
-
+    @Operation(summary = "Get Wholesale Dollar", responses = {
+            @ApiResponse(description = "Successful Operation", responseCode = "200",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = MoneyDTO.class))),
+            @ApiResponse(responseCode = "404", description = "Not found",
+                    content = @Content)})
+    @GetMapping("/cripto")
+    ResponseEntity<Money> getCryptoollar(){
+        return ResponseEntity.status(HttpStatus.OK).body(dolarService.getCryptoDollar());
+    }
 }

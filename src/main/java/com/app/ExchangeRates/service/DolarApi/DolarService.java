@@ -12,4 +12,5 @@ public interface DolarService {
     Money getStockMarketDollar();
     Money getSolidarityDollar();
     Money getWholesaleDollar();
+    Money getCryptoDollar();
 }

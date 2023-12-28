@@ -19,37 +19,33 @@ public class OtherCurrenciesServiceImpl implements OtherCurrenciesService {
     @Override
     public Money getEuro() {
         String uri = baseUrl+"/cotizaciones/eur";
-        HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(null),Money.class));
     }
 
     @Override
     public Money getBrazilianReal() {
         String uri = baseUrl+"/cotizaciones/brl";
-        HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(null),Money.class));
     }
 
     @Override
     public Money getChileanPeso() {
         String uri = baseUrl+"/cotizaciones/clp";
-        HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                        apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(null),Money.class));
     }
 
     @Override
     public Money getUruguayanPeso() {
         String uri = baseUrl+"/cotizaciones/uyu";
-        HttpHeaders headers = new HttpHeaders();
         return apiUtil
                 .buildApiDolarDTO(
-                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(headers),Money.class));
+                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(null),Money.class));
     }
 
 

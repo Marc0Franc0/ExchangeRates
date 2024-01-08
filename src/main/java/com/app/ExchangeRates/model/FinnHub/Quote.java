@@ -5,6 +5,7 @@ import lombok.*;
 
 @Builder
 @AllArgsConstructor
+@ToString
 @Data
 public class Quote {
     @JsonProperty("c")

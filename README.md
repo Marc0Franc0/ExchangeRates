@@ -12,7 +12,28 @@ El proyecto tiene la posibilidad de consumir diferentes APIS con el objetivo de 
 ## Ejecución
 1. Clonar repositorio: git clone https://github.com/Marc0Franc0/ExchangesRatesApi
 2. Ir al directorio del proyecto: cd ExchangesRatesApi
-3. Seguir pasos para ejecución con Maven
+3. Seguir pasos para ejecución con Docker o Maven
+
+## Requerimientos para ejecutar con Docker
+
+Para construir y ejecutar la aplicación necesita:
+- [Docker](https://www.docker.com/products/docker-desktop/)
+
+Ejecutar localmente
+
+```shell
+docker pull marc0franc0/exchange-rates-api:1.0.0
+```
+```shell
+docker create -p9090:8080 --name app-exchange-rates  marc0franc0/exchange-rates-api:1.0.0
+```
+```shell
+docker start app-exchange-rates
+```
+
+Dirigirse a:
+- [Documentación en formato JSON](http://localhost:9090/api/v3/api-docs)
+- [Documentación Swagger con interfaz gráfica](http://localhost:9090/doc/swagger-ui/index.html)
 
 ## Requerimientos para ejecutar con Maven
 

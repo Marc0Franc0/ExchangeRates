@@ -1,4 +1,4 @@
-package com.app.ExchangeRates;
+package com.app.ExchangeRates.DolarApi;
 
 import com.app.ExchangeRates.model.DolarApi.Money;
 import com.app.ExchangeRates.service.DolarApi.DolarService;

@@ -1,4 +1,4 @@
-package com.app.ExchangeRates;
+package com.app.ExchangeRates.FinnHubApi;
 
 import com.app.ExchangeRates.model.FinnHub.Quote;
 import com.app.ExchangeRates.service.FinnHubApi.QuoteService;

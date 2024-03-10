@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/exchanges/usd/")
@@ -93,5 +94,15 @@ public class DolarController {
     @GetMapping("/cripto")
     ResponseEntity<Money> getCryptoollar(){
         return ResponseEntity.status(HttpStatus.OK).body(dolarService.getCryptoDollar());
+    }
+    @Operation(summary = "Get all dollars", responses = {
+            @ApiResponse(description = "Successful Operation", responseCode = "200",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Money.class))),
+            @ApiResponse(responseCode = "404", description = "Not found",
+                    content = @Content)})
+    @GetMapping("/")
+    ResponseEntity<List<Money>> getAllDollars(){
+        return ResponseEntity.status(HttpStatus.OK).body(dolarService.getAllDollars());
     }
 }

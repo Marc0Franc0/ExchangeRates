@@ -3,6 +3,7 @@ package com.app.ExchangeRates.service.DolarApi;
 import com.app.ExchangeRates.model.DolarApi.Money;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 @Service
 public interface DolarService {
     Money getOfficialDollar();
@@ -13,4 +14,5 @@ public interface DolarService {
     Money getSolidarityDollar();
     Money getWholesaleDollar();
     Money getCryptoDollar();
+    List<Money> getAllDollars();
 }

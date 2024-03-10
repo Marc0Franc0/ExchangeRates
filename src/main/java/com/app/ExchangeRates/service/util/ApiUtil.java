@@ -11,6 +11,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 @Slf4j
 public class ApiUtil {
 
@@ -27,6 +28,13 @@ public class ApiUtil {
         if(response.getStatusCode().value()==200){
             log.info("Request to external api correct: {}", response.getStatusCode());
             return MoneyMapper.buildMoneyDto((Money) response.getBody());
+        }
+        throw throwError(response);
+    }
+    public List<Money> buildListApiDolarDTO(ResponseEntity<?> response){
+        if(response.getStatusCode().value()==200){
+            log.info("Request to external api correct: {}", response.getStatusCode());
+            return MoneyMapper.buildMoneyDto(response.getBody());
         }
         throw throwError(response);
     }

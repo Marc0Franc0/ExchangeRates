@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 @Service
 public class DolarServiceImpl implements DolarService {
     @Value("${apidolar.base-url}")
@@ -76,5 +77,13 @@ public class DolarServiceImpl implements DolarService {
         return apiUtil
                 .buildApiDolarDTO(
                         apiUtil.buildExchange(uri,HttpMethod.GET,new HttpEntity<>(null),Money.class));
+    }
+
+    @Override
+    public List<Money> getAllDollars() {
+        String uri = baseUrl+"/dolares";
+        return  apiUtil
+                .buildListApiDolarDTO(
+                        apiUtil.buildExchange(uri, HttpMethod.GET, new HttpEntity<>(null), List.class));
     }
 }

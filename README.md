@@ -22,18 +22,18 @@ Para construir y ejecutar la aplicación necesita:
 Ejecutar localmente
 
 ```shell
-docker pull marc0franc0/exchange-rates-api:1.0.0
+docker pull marc0franc0/exchange-rates-api:1.3.0
 ```
 ```shell
-docker create -p9090:8080 --name app-exchange-rates  marc0franc0/exchange-rates-api:1.0.0
+docker create -p8080:8080 --name app-exchange-rates  marc0franc0/exchange-rates-api:1.3.0
 ```
 ```shell
 docker start app-exchange-rates
 ```
 
 Dirigirse a:
-- [Documentación en formato JSON](http://localhost:9090/api/v3/api-docs)
-- [Documentación Swagger con interfaz gráfica](http://localhost:9090/doc/swagger-ui/index.html)
+- [Documentación en formato JSON](http://localhost:8080/api/v3/api-docs)
+- [Documentación Swagger con interfaz gráfica](http://localhost:8080/doc/swagger-ui/index.html)
 
 ## Requerimientos para ejecutar con Maven
 
@@ -41,8 +41,6 @@ Para construir y ejecutar la aplicación necesita:
 
 - [JDK 21+](https://www.oracle.com/java/technologies/downloads/#java21)
 - [Maven 3+](https://maven.apache.org)
-
-Configurar datos de la base de datos MySQL: [application.properties](https://github.com/Marc0Franc0/Forum/blob/main/src/main/resources/application-dev.properties)
 
 Ejecutar localmente
 

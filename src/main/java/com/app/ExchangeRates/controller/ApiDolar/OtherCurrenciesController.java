@@ -1,9 +1,6 @@
 package com.app.ExchangeRates.controller.ApiDolar;
 
 import com.app.ExchangeRates.model.DolarApi.Money;
-import com.app.ExchangeRates.model.DolarApi.MoneyDTO;
-import com.app.ExchangeRates.model.FinnHub.Quote;
-import com.app.ExchangeRates.service.DolarApi.DolarService;
 import com.app.ExchangeRates.service.DolarApi.OtherCurrenciesService;
 import com.app.ExchangeRates.service.FinnHubApi.QuoteService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/exchanges/")
+@RequestMapping("/api/v1/exchanges/")
 public class OtherCurrenciesController {
     @Autowired
     private OtherCurrenciesService otherCurrenciesService;
@@ -26,7 +23,7 @@ public class OtherCurrenciesController {
     private QuoteService quoteService;
     @Operation(summary = "Get Euro", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/euro")
@@ -35,7 +32,7 @@ public class OtherCurrenciesController {
     }
     @Operation(summary = "Get Brazilian Real", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/bzl")
@@ -44,7 +41,7 @@ public class OtherCurrenciesController {
     }
     @Operation(summary = "Get Chilean Peso", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/clp")
@@ -53,7 +50,7 @@ public class OtherCurrenciesController {
     }
     @Operation(summary = "Get Uruguayan Peso", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/uyu")

@@ -1,7 +1,6 @@
 package com.app.ExchangeRates.controller.ApiDolar;
 
 import com.app.ExchangeRates.model.DolarApi.Money;
-import com.app.ExchangeRates.model.DolarApi.MoneyDTO;
 import com.app.ExchangeRates.service.DolarApi.DolarService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -16,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/exchanges/usd/")
+@RequestMapping("/api/v1/exchanges/usd/")
 public class DolarController {
     @Autowired
     private DolarService dolarService;
     @Operation(summary = "Get Official Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/official")
@@ -31,7 +30,7 @@ public class DolarController {
     }
     @Operation(summary = "Get Blue Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/blue")
@@ -40,7 +39,7 @@ public class DolarController {
     }
     @Operation(summary = "Get CCL Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/ccl")
@@ -49,7 +48,7 @@ public class DolarController {
     }
     @Operation(summary = "Get Card Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/card")
@@ -58,7 +57,7 @@ public class DolarController {
     }
     @Operation(summary = "Get StockMarket Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MoneyDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/stock-market")
@@ -78,7 +77,7 @@ public class DolarController {
     @Operation(summary = "Get Wholesale Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
                     content = @Content(mediaType = "application/json",
-                             schema = @Schema(implementation = MoneyDTO.class))),
+                             schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/wholesale")
@@ -88,7 +87,7 @@ public class DolarController {
     @Operation(summary = "Get Wholesale Dollar", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
                     content = @Content(mediaType = "application/json",
-                            schema = @Schema(implementation = MoneyDTO.class))),
+                            schema = @Schema(implementation = Money.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/cripto")

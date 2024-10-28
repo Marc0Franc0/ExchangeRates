@@ -1,0 +1,6 @@
+finnHub:
+  token: cljvmhhr01ql1cbg8bf0cljvmhhr01ql1cbg8bfg
+openapi:
+  service:
+    title: ExchangeRatesApi doc #title
+    url: http://localhost:8080

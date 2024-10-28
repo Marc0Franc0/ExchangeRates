@@ -18,55 +18,59 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IntegrationOtherCurrenciesControllerTest {
     @Autowired
     private MockMvc mockMvc;
-    private String baseUrl="/api/exchanges/";
+    private String baseUrl="/api/v1/exchanges/";
     @Test
     public void getEuro() throws Exception {
         String url = baseUrl+"euro";
-        mockMvc
-                .perform(MockMvcRequestBuilders.get(url)
+        mockMvc.perform(MockMvcRequestBuilders.get(url)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect
-                        (MockMvcResultMatchers
-                                .content()
-                                .contentType(MediaType.APPLICATION_JSON));
+                .andExpect(MockMvcResultMatchers.content()
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.moneda").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.compra").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.venta").exists());
     }
 
     @Test
     public void getBrazilianReal() throws Exception {
         String url = baseUrl+"bzl";
-        mockMvc
-                .perform(MockMvcRequestBuilders.get(url)
+        mockMvc.perform(MockMvcRequestBuilders.get(url)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect
-                        (MockMvcResultMatchers
-                                .content()
-                                .contentType(MediaType.APPLICATION_JSON));
+                .andExpect(MockMvcResultMatchers.content()
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.moneda").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.compra").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.venta").exists());
     }
     @Test
     public void getChileanPeso() throws Exception {
         String url = baseUrl+"clp";
-        mockMvc
-                .perform(MockMvcRequestBuilders.get(url)
+        mockMvc.perform(MockMvcRequestBuilders.get(url)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect
-                        (MockMvcResultMatchers
-                                .content()
-                                .contentType(MediaType.APPLICATION_JSON));
+                .andExpect(MockMvcResultMatchers.content()
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.moneda").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.compra").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.venta").exists());
     }
     @Test
     public void getUruguayanPeso() throws Exception {
         String url = baseUrl+"uyu";
-        mockMvc
-                .perform(MockMvcRequestBuilders.get(url)
+        mockMvc.perform(MockMvcRequestBuilders.get(url)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect
-                        (MockMvcResultMatchers
-                                .content()
-                                .contentType(MediaType.APPLICATION_JSON));
+                .andExpect(MockMvcResultMatchers.content()
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.moneda").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.compra").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.venta").exists());
     }
 
 }

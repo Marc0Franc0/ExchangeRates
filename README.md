@@ -22,18 +22,18 @@ Para construir y ejecutar la aplicación necesita:
 Ejecutar localmente
 
 ```shell
-docker pull marc0franc0/exchange-rates-api:1.3.0
+docker pull marc0franc0/exchange-rates-api:1.2.1
 ```
 ```shell
-docker create -p8080:8080 --name app-exchange-rates  marc0franc0/exchange-rates-api:1.3.0
+docker create -p8080:8080 --name app-exchange-rates -e SPRING_PROFILES_ACTIVE=dev marc0franc0/exchange-rates-api:1.2.1
 ```
 ```shell
 docker start app-exchange-rates
 ```
 
 Dirigirse a:
-- [Documentación en formato JSON](http://localhost:8080/api/v3/api-docs)
-- [Documentación Swagger con interfaz gráfica](http://localhost:8080/doc/swagger-ui/index.html)
+- Documentación JSON: /api/v3/api-docs
+- Documentación Swagger: /doc/swagger-ui/index.html
 
 ## Requerimientos para ejecutar con Maven
 
@@ -52,5 +52,5 @@ mvn spring-boot:run
 ```
 
 Dirigirse a:
-- [Documentación en formato JSON](http://localhost:8080/api/v3/api-docs)
-- [Documentación Swagger con interfaz gráfica](http://localhost:8080/doc/swagger-ui/index.html)
+- Documentación JSON: /api/v3/api-docs
+- Documentación Swagger /doc/swagger-ui/index.html

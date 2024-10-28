@@ -1,7 +1,6 @@
 package com.app.ExchangeRates.service.util;
 
 import com.app.ExchangeRates.mapper.DolarApi.MoneyMapper;
-import com.app.ExchangeRates.mapper.FinnHubApi.QuoteMapper;
 import com.app.ExchangeRates.model.DolarApi.Money;
 import com.app.ExchangeRates.model.FinnHub.Quote;
 import lombok.extern.slf4j.Slf4j;
@@ -12,12 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+
 @Slf4j
 public class ApiUtil {
-
+    private final RestTemplate restTemplate;
     @Autowired
-    private  RestTemplate restTemplate;
-
+    public ApiUtil(RestTemplate restTemplate){
+        this.restTemplate=restTemplate;
+    }
     //Se utiliza como excepcion en métodos de esta clase
     private RuntimeException throwError(ResponseEntity<?> response){
         log.error("Error when making request to external api - httpStatus was: {}", response.getStatusCode());
@@ -39,23 +40,26 @@ public class ApiUtil {
         throw throwError(response);
     }
     //se encarga de crear una consulta externa
-    public  ResponseEntity<?> buildExchange(String uri, HttpMethod httpMethod,
+    public ResponseEntity<?> buildExchange(String uri, HttpMethod httpMethod,
                                             HttpEntity<?> httpEntity, Class returnType){
         return  restTemplate.exchange(uri,httpMethod,httpEntity,returnType);
     }
-    //se encarga de crear una consulta externa
-    public  ResponseEntity<?> getForEntity(String uri, Class returnType){
-        return  restTemplate.getForEntity(uri,returnType);
+    public ResponseEntity<?> getForEntity(String uri, Class returnType){
+        ResponseEntity<?> response = restTemplate.getForEntity(uri, returnType);
+        log.info("ResponseEntity devuelto: {}", response);
+        return response;
     }
-    //Construye un response
+
     public Quote buildQuoteDTO(ResponseEntity<?> response){
-        if(response.getStatusCode().value()==200){
-            log.info("Request to external api correct: {}", response.getStatusCode());
-            return QuoteMapper.buildQuoteDto((Quote) response.getBody());
+        if(response.getStatusCode().value() == 200){
+            log.info("Petición a la API externa correcta: {}", response.getStatusCode());
+            Quote quote = (Quote) response.getBody();
+            log.info("Quote transformado: {}", quote);
+            return quote;
         }
         throw throwError(response);
     }
-    //Verifica que el un string no contenga números
+        //Verifica que el un string no contenga números
     public boolean validateString(String string){
 
         try {

@@ -1,7 +1,6 @@
 package com.app.ExchangeRates.controller.FinnHubApi;
 
 import com.app.ExchangeRates.model.FinnHub.Quote;
-import com.app.ExchangeRates.model.FinnHub.QuoteDTO;
 import com.app.ExchangeRates.service.FinnHubApi.QuoteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -16,17 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/exchanges/stock-price")
+@RequestMapping("/api/v1/exchanges/stock-price")
 public class QuoteController {
     @Autowired
     private QuoteService quoteService;
     @Operation(summary = "Get prices from the foreign market at the dollar price", responses = {
             @ApiResponse(description = "Successful Operation", responseCode = "200",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = QuoteDTO.class))),
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = Quote.class))),
             @ApiResponse(responseCode = "404", description = "Not found",
                     content = @Content)})
     @GetMapping("/{symbol}")
     ResponseEntity<Quote> getQuote(@PathVariable String symbol){
         return ResponseEntity.status(HttpStatus.OK).body(quoteService.getQuote(symbol));
     }
-}
+    }

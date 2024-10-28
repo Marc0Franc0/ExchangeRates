@@ -19,14 +19,15 @@ public class IntegrationControllerQuoteTest {
     @Autowired
     private MockMvc mockMvc;
     @Test
-    public void getOfficialQuote() throws Exception {
-        String url = "/api/exchanges/stock-price/APPL";
-        mockMvc
-                .perform(MockMvcRequestBuilders.get(url))
+    public void getQuote() throws Exception {
+        String url = "/api/v1/exchanges/stock-price/AAPL";
+        mockMvc.perform(MockMvcRequestBuilders.get(url)
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect
-                        (MockMvcResultMatchers
-                                .content()
-                                .contentType(MediaType.APPLICATION_JSON));
+                .andExpect(MockMvcResultMatchers.content()
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.currencyPrice").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.percentChange").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.openPriceOfTheDay").exists());
     }
 }

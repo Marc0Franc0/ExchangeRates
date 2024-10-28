@@ -1,13 +1,10 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:test}
 apiDolar:
   baseUrl: https://dolarapi.com/v1
 finnHub:
   baseUrl: https://finnhub.io/api/v1
-  token: cljvmhhr01ql1cbg8bf0cljvmhhr01ql1cbg8bfg
-openapi:
-  service:
-    title: ExchangeRatesApi doc #title
-    version: 1.0.0
-    url: http://localhost:8080
 springDoc:
   apiDocs:
     enabled: true

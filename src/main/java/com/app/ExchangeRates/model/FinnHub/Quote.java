@@ -5,16 +5,21 @@ import lombok.*;
 
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Data
 public class Quote {
-    @JsonProperty("c")
+    @JsonProperty("currencyPrice")
+    @JsonAlias("c")
     private Double currencyPrice;
-    @JsonProperty("dp")
-    private Double percentChange;
-    @JsonProperty("o")
-    private Double openPriceOfTheDay;
 
+    @JsonProperty("percentChange")
+    @JsonAlias("dp")
+    private Double percentChange;
+
+    @JsonProperty("openPriceOfTheDay")
+    @JsonAlias("o")
+    private Double openPriceOfTheDay;
     /*  {
         "c": 191.24,
             "d": 1.29,

@@ -1,0 +1,6 @@
+finnHub:
+  token: ${FINNHUB_TOKEN}
+openapi:
+  service:
+    title: ExchangeRatesApi doc #title
+    url: ${API_URL}

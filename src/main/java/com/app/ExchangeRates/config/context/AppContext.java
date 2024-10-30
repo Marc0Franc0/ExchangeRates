@@ -27,7 +27,7 @@ public class AppContext {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry
-                        .addMapping("*")
+                        .addMapping("/**")
                         .allowedMethods("*")
                         .allowedOrigins("*")
                         .exposedHeaders("*");

@@ -2,14 +2,7 @@ HELP.md
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-/target/classes/
-/target/generated-sources/
-/target/generated-test-sources/
-/target/maven-archiver/
-/target/maven-status/
-/target/surefire-reports/
-/target/test-classes/
-/target/ExchangeRatesApi-3.2.0.jar.original
+target/**
 ### STS ###
 .apt_generated
 .classpath

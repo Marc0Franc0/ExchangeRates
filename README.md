@@ -1,12 +1,12 @@
 # [ExchangesRatesApi](https://github.com/Marc0Franc0/ExchangesRatesApi#exchangesratesapi)
 
-El proyecto tiene la posibilidad de consumir diferentes APIS con el objetivo de obtener los tipos de cambios en argentina y precios del mercado en dólares.
+API REST que brinda información actualizada sobre las tasas de cambio de USD y otras monedas en Argentina. También sobre el valor de acciones en USD.
 
 ## Características
 - Consumo de APIS externas
 
 ## Tecnologías
-- Spring Boot 3.0
+- Spring Boot 3.2.0
 - Maven
 
 ## Ejecución
@@ -32,8 +32,7 @@ docker start app-exchange-rates
 ```
 
 Dirigirse a:
-- Documentación JSON: /api/v3/api-docs
-- Documentación Swagger: /doc/swagger-ui/index.html
+- [Aquí](http://localhost:8080)
 
 ## Requerimientos para ejecutar con Maven
 
@@ -52,5 +51,4 @@ mvn spring-boot:run
 ```
 
 Dirigirse a:
-- Documentación JSON: /api/v3/api-docs
-- Documentación Swagger /doc/swagger-ui/index.html
+- [Aquí](http://localhost:8080)

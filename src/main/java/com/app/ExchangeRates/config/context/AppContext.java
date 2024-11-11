@@ -12,6 +12,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -32,7 +33,15 @@ public class AppContext {
                         .allowedOrigins("*")
                         .exposedHeaders("*");
             }
-
+            @Override
+            public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry.addResourceHandler(
+                                "/img/**",
+                                "/css/**")
+                        .addResourceLocations(
+                                "classpath:/static/img/",
+                                "classpath:/static/css/");
+            }
         };
 
     }

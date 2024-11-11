@@ -1,0 +1,130 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px; /* Añadido para mejorar el espaciado en pantallas pequeñas */
+        }
+
+        .container {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 50px);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            color: #007BFF;
+        }
+
+        .card .rates {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .card .rates div {
+            width: 45%;
+        }
+
+        .divider {
+            width: 1px;
+            height: 40px;
+            background-color: #007BFF;
+        }
+
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .button i {
+            margin-right: 8px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .card {
+                width: calc(33.33% - 10px);
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+        }

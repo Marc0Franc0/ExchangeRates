@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/exchanges/stock-price")
+@RequestMapping("/api/v1/stock")
 public class QuoteController {
     @Autowired
     private QuoteService quoteService;

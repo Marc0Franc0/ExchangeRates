@@ -8,6 +8,9 @@ API REST que brinda información actualizada sobre las tasas de cambio de USD y 
 ## Tecnologías
 - Spring Boot 3.2.0
 - Maven
+- 
+## Demo
+[Aquí](https://exchange-rates-api.koyeb.app/)
 
 ## Ejecución
 1. Clonar repositorio: git clone https://github.com/Marc0Franc0/ExchangesRatesApi
@@ -22,7 +25,7 @@ Para construir y ejecutar la aplicación necesita:
 Ejecutar localmente
 
 ```shell
-docker pull marc0franc0/exchange-rates-api:1.2.1
+docker pull marc0franc0/exchange-rates-api:1.4.0
 ```
 ```shell
 docker create -p8080:8080 --name app-exchange-rates -e SPRING_PROFILES_ACTIVE=dev marc0franc0/exchange-rates-api:1.2.1

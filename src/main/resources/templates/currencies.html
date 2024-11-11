@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/currencies.css" th:href="@{/css/currencies.css}"/>
+    <title>Monedas</title>
+</head>
+<body>
+<div class="container">
+    <h1>Monedas</h1>
+    <p>Cotización del dólar y otras monedas</p>
+    <a class="button" th:href="@{/currencies.dollar}"><i class="fas fa-book"></i>Dólar</a>
+    <a class="button" th:href="@{/currencies.other}"><i class="fas fa-file-alt"></i>Otras monedas</a>
+    <a class="button" th:href="@{/}"><i class="fas fa-file-alt"></i>Volver</a>
+</div>
+</body>
+</html>

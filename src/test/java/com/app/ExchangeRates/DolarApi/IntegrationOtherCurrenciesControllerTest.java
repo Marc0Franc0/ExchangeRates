@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IntegrationOtherCurrenciesControllerTest {
     @Autowired
     private MockMvc mockMvc;
-    private String baseUrl="/api/v1/exchanges/";
+    private String baseUrl="/api/v1/currencies/other/";
     @Test
     public void getEuro() throws Exception {
         String url = baseUrl+"euro";

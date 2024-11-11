@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../static/css/currencies.dollar.css" th:href="@{/css/currencies.dollar.css}">
+    <title>Cotización del Dólar</title>
+</head>
+<body>
+<div class="container">
+    <h1>Cotización del Dólar</h1>
+    <div class="cards-container">
+        <div class="card" th:each="money : ${dollarList}">
+            <h2 th:text="${money.nombre}"></h2>
+            <div class="rates">
+                <div>
+                    <p>Compra</p>
+                    <strong th:text="'$' + ${money.compra}"></strong>
+                </div>
+                <div>
+                    <p>Venta</p>
+                    <strong th:text="'$' + ${money.venta}"></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="button" th:href="@{/currencies}"><i class="fas fa-home"></i> Volver a Inicio</a>
+</div>
+</body>
+</html>

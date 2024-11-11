@@ -20,7 +20,7 @@ public class IntegrationControllerQuoteTest {
     private MockMvc mockMvc;
     @Test
     public void getQuote() throws Exception {
-        String url = "/api/v1/exchanges/stock-price/AAPL";
+        String url = "/api/v1/stock/AAPL";
         mockMvc.perform(MockMvcRequestBuilders.get(url)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())

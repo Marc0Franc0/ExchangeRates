@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IntegrationDollarControllerTest {
     @Autowired
     private MockMvc mockMvc;
-    private final String baseUrl="/api/v1/exchanges/usd/";
+    private final String baseUrl="/api/v1/currencies/usd/";
     @Test
     public void getOfficialDollar() throws Exception {
         String url = baseUrl + "official";

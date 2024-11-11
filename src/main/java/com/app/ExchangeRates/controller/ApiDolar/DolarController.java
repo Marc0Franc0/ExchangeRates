@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/exchanges/usd/")
+@RequestMapping("/api/v1/currencies/usd")
 public class DolarController {
     @Autowired
     private DolarService dolarService;
